@@ -1,5 +1,5 @@
 ---
-title: 📄 Config File
+title: Config File
 ---
 
 All configuration for your houdini application is defined in a single file that is imported by both the runtime and the

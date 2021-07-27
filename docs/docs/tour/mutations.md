@@ -1,5 +1,5 @@
 ---
-title: 📝 Mutations
+title: Mutations
 ---
 
 Mutations are defined in your component like the rest of the documents but

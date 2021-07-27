@@ -14,7 +14,7 @@ module.exports = {
 		'tour/index',
 		{
 			type: 'category',
-			label: '👶 Getting Started',
+			label: 'Getting Started',
 			collapsed: false,
 			items: [
 				'tour/getting-started/setup',
@@ -27,7 +27,7 @@ module.exports = {
 		'tour/mutations',
 		{
 			type: 'category',
-			label: '💪 Advanced Topics',
+			label: 'Advanced Topics',
 			collapsed: false,
 			items: [
 				'tour/advanced/subscriptions',

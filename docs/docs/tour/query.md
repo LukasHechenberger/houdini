@@ -1,5 +1,5 @@
 ---
-title: 🚀 Fetching Data
+title: Fetching Data
 ---
 
 ## Fetching Data

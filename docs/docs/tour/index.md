@@ -1,5 +1,5 @@
 ---
-title: 👋 Welcome to Houdini
+title: Welcome to Houdini
 slug: /tour
 ---
 

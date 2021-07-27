@@ -1,5 +1,5 @@
 ---
-title: 🧾 Subscriptions
+title: Subscriptions
 ---
 
 Subscriptions in houdini are handled with the `subscription` function exported by your runtime. This function

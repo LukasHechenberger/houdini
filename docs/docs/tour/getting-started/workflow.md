@@ -1,3 +1,3 @@
 ---
-title: 🔧 Development Workflow
+title: Development Workflow
 ---

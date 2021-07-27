@@ -1,5 +1,5 @@
 ---
-title: ⚖️ Custom Scalars
+title: Custom Scalars
 ---
 
 Configuring your runtime to handle custom scalars is done under the `scalars` key in your config:

@@ -9043,6 +9043,7 @@ __metadata:
     clsx: ^1.1.1
     file-loader: ^6.2.0
     prism-react-renderer: ^1.2.1
+    prism-svelte: ^0.4.7
     react: ^17.0.1
     react-dom: ^17.0.1
     url-loader: ^4.1.1
@@ -16432,6 +16433,13 @@ fsevents@^1.2.7:
   peerDependencies:
     react: ">=0.14.9"
   checksum: b27670bd96e4320075f9a2932d440b3025f9ce1ff64ddd8d8e71867701aabd6c9d2914d5deecb7bef7e92ed59baaef538a31559ca71c76efee3711a064f3e8ff
+  languageName: node
+  linkType: hard
+
+"prism-svelte@npm:^0.4.7":
+  version: 0.4.7
+  resolution: "prism-svelte@npm:0.4.7"
+  checksum: 7c82f9e1c75a91c398e1f33b04d8fc0baa629f3d5d69e80ab990b18d5f801b413498e02997dc6ce6fa05eff2b4d5a44c5a9ed315e755a3300d87c25727b3914c
   languageName: node
   linkType: hard
 

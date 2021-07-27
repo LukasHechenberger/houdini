@@ -1,5 +1,5 @@
 ---
-title: 🧩 Fragments
+title: Fragments
 ---
 
 Your components will want to make assumptions about which attributes are

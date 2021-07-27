@@ -1,5 +1,5 @@
 ---
-title: ♻️ Pagination
+title: Pagination
 ---
 
 It's often the case that you want to avoid querying an entire list from your API in order
