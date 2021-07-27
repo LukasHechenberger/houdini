@@ -10,6 +10,33 @@
  */
 
 module.exports = {
-	docs: ['tour/index', 'tour/setup', 'tour/query', 'tour/mutations'],
+	docs: [
+		'tour/index',
+		{
+			type: 'category',
+			label: '👶 Getting Started',
+			collapsed: false,
+			items: [
+				'tour/getting-started/setup',
+				'tour/getting-started/workflow',
+				'tour/getting-started/config',
+			],
+		},
+		'tour/query',
+		'tour/fragments',
+		'tour/mutations',
+		{
+			type: 'category',
+			label: '💪 Advanced Topics',
+			collapsed: false,
+			items: [
+				'tour/advanced/subscriptions',
+				'tour/advanced/pagination',
+				'tour/advanced/scalars',
+				'tour/advanced/authentication',
+				'tour/advanced/node',
+			],
+		},
+	],
 	api: ['api/index'],
 }
