@@ -14,9 +14,74 @@ export class Environment {
 		this.socket = subscriptionHandler
 	}
 
-	sendRequest<_Data>(ctx: FetchContext, params: FetchParams, session?: FetchSession) {
-		return this.fetch.call(ctx, params, session)
+	// requests could come back in a different order than they were sent. in order to address this, we need to
+	// track the pending requests in a queue (first in, first-out). when a promise resolves, it needs to check if
+	// it was at the head of the list, if it was we need to keep walking down resolving promises
+	// until we run into one we are waiting on again
+	private requestID = 0
+	private pendingRequests: PendingRequest[] = []
+	sendRequest<_Data>(
+		ctx: FetchContext,
+		params: FetchParams,
+		session?: FetchSession
+	): Promise<RequestPayload<_Data>> {
+		return new Promise((resolve, reject) => {
+			// we need to add this request to the pile
+			const request: PendingRequest = {
+				id: this.requestID++,
+				request: this.fetch
+					.call(ctx, params, session)
+					.then((data) => {
+						request.data = data
+					})
+					.catch((err) => {
+						request.error = err
+					})
+					.finally(() => {
+						request.request = null
+						// if this request is at the top of the list
+						if (this.pendingRequests[0].id === request.id) {
+							// walk down the list resolving promises
+							let walk = true
+							while (walk) {
+								// pop off the first entry in the list
+								const next = this.pendingRequests.shift()
+								if (!next) {
+									walk = false
+									continue
+								}
+
+								// if there is data
+								if (next.data) {
+									next.resolve(next.data)
+								} else {
+									next.reject(next.error)
+								}
+
+								// if the next element hasn't resolved, dont keep walking
+								walk =
+									this.pendingRequests[0] &&
+									this.pendingRequests[0].request === null
+							}
+						}
+					}),
+				resolve,
+				reject,
+			}
+
+			// add the request to the list
+			this.pendingRequests.push(request)
+		})
 	}
+}
+
+type PendingRequest = {
+	id: number
+	request: Promise<any> | null
+	data?: any
+	error?: any
+	resolve: (data: any) => void
+	reject: (error: any) => void
 }
 
 let currentEnv: Environment | null = null
@@ -147,12 +212,12 @@ export async function fetchQuery<_Data>(
 		variables: { [name: string]: unknown }
 	},
 	session?: FetchSession
-) {
+): Promise<RequestPayload<_Data>> {
 	// grab the current environment
 	const environment = getEnvironment()
 	// if there is no environment
 	if (!environment) {
-		return { data: {}, errors: [{ message: 'could not find houdini environment' }] }
+		return { data: {} as _Data, errors: [{ message: 'could not find houdini environment' }] }
 	}
 
 	return await environment.sendRequest<_Data>(ctx, { text, hash, variables }, session)
