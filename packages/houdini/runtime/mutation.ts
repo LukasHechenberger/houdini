@@ -42,7 +42,9 @@ export function mutation<_Mutation extends Operation<any, any>>(
 					artifact: document.artifact,
 					config: config,
 				}) as _Mutation['input'],
-				sessionStore
+				sessionStore,
+				// make sure that mutations preserve order
+				true
 			)
 
 			cache.write({

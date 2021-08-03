@@ -23,8 +23,14 @@ export class Environment {
 	sendRequest<_Data>(
 		ctx: FetchContext,
 		params: FetchParams,
-		session?: FetchSession
+		session?: FetchSession,
+		preserveOrder?: boolean
 	): Promise<RequestPayload<_Data>> {
+		// if the request doesn't care about order, just call it
+		if (!preserveOrder) {
+			return this.fetch.call(ctx, params, session)
+		}
+
 		return new Promise((resolve, reject) => {
 			// we need to add this request to the pile
 			const request: PendingRequest = {
@@ -156,7 +162,8 @@ export type RequestHandler<_Data> = (
 export async function executeQuery<_Data>(
 	artifact: QueryArtifact | MutationArtifact,
 	variables: { [key: string]: any },
-	sessionStore: Readable<any>
+	sessionStore: Readable<any>,
+	preserveOrder?: boolean
 ): Promise<RequestPayload<_Data>> {
 	// We use get from svelte/store here to subscribe to the current value and unsubscribe after.
 	// Maybe there can be a better solution and subscribing only once?
@@ -185,7 +192,8 @@ export async function executeQuery<_Data>(
 			hash,
 			variables,
 		},
-		session
+		session,
+		preserveOrder
 	)
 
 	// we could have gotten a null response
@@ -211,7 +219,8 @@ export async function fetchQuery<_Data>(
 		hash: string
 		variables: { [name: string]: unknown }
 	},
-	session?: FetchSession
+	session?: FetchSession,
+	preserveOrder?: boolean
 ): Promise<RequestPayload<_Data>> {
 	// grab the current environment
 	const environment = getEnvironment()
@@ -220,7 +229,12 @@ export async function fetchQuery<_Data>(
 		return { data: {} as _Data, errors: [{ message: 'could not find houdini environment' }] }
 	}
 
-	return await environment.sendRequest<_Data>(ctx, { text, hash, variables }, session)
+	return await environment.sendRequest<_Data>(
+		ctx,
+		{ text, hash, variables },
+		session,
+		preserveOrder
+	)
 }
 
 // convertKitPayload is responsible for taking the result of kit's load

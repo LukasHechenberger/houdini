@@ -29,7 +29,9 @@ test('network requests out of order', async function () {
 				fetch: () => {},
 				session: {},
 			},
-			{ text }
+			{ text },
+			null,
+			true
 		)
 
 	// track the order things resolved
