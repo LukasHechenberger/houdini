@@ -37,10 +37,7 @@ test('save root object', function () {
 	})
 
 	// make sure we can get back what we wrote
-	expect(cache.internal.getRecord(cache.id('User', data.viewer)!)?.fields).toEqual({
-		id: '1',
-		firstName: 'bob',
-	})
+	expect(cache.internal.getRecord(cache.id('User', data.viewer)!)?.fields).toEqual(data)
 })
 
 test('partial update existing record', function () {

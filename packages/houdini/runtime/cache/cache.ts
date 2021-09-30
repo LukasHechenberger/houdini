@@ -341,6 +341,20 @@ export class Cache {
 		}
 	}
 
+	addLayer({
+		selection,
+		parentID,
+		data,
+	}: {
+		selection: SubscriptionSelection
+		data: {}
+		parentID: string
+	}): LayerID {
+		return '1'
+	}
+
+	deleteLayer(id: LayerID) {}
+
 	private removeSubscribers(
 		rootRecord: Record,
 		spec: SubscriptionSpec,
@@ -1118,6 +1132,8 @@ export class Cache {
 
 // the list of characters that make up a valid graphql variable name
 const varChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789'
+
+type LayerID = string
 
 // in order to keep some methods on the class out of the public API we'll wrap some of the low-level or heavily caveated
 // functions in a "proxy"
