@@ -2,7 +2,8 @@
 	"name": "@lukashechenberger/houdini",
 	"version": "0.12.1-modified.0",
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com"
+		"registry": "https://npm.pkg.github.com",
+		"access": "public"
 	},
 	"description": "The disappearing graphql client for SvelteKit",
 	"scripts": {
