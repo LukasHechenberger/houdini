@@ -2430,6 +2430,41 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lukashechenberger/houdini@^0.11.2-modified, @lukashechenberger/houdini@workspace:packages/houdini":
+  version: 0.0.0-use.local
+  resolution: "@lukashechenberger/houdini@workspace:packages/houdini"
+  dependencies:
+    "@babel/core": ^7.12.10
+    "@babel/preset-env": ^7.12.11
+    "@babel/preset-typescript": ^7.12.7
+    "@graphql-tools/merge": ^6.2.7
+    "@rollup/plugin-json": ^4.1.0
+    "@types/estree": ^0.0.47
+    "@types/glob": ^7.1.3
+    "@types/inquirer": ^7.3.1
+    "@types/jest": ^26.0.20
+    "@types/mkdirp": ^1.0.1
+    "@types/node-fetch": ^2.5.10
+    babel-jest: ^26.6.3
+    babylon: ^7.0.0-beta.47
+    commander: ^7.1.0
+    estree-walker: ^2.0.2
+    glob: ^7.1.6
+    graphql: ^15.5.0
+    houdini-common: ^0.11.1
+    inquirer: ^7.3.3
+    jest: ^26.6.3
+    mkdirp: ^1.0.4
+    node-fetch: ^2.6.1
+    recast: ^0.20.4
+    rollup-plugin-preserve-shebangs: ^0.2.0
+    svelte: ^3.34.0
+    typescript: ^4.0.0
+  bin:
+    houdini: build/cmd.js
+  languageName: unknown
+  linkType: soft
+
 "@mrmlnc/readdir-enhanced@npm:^2.2.1":
   version: 2.2.1
   resolution: "@mrmlnc/readdir-enhanced@npm:2.2.1"
@@ -5737,13 +5772,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "example-kit@workspace:example"
   dependencies:
+    "@lukashechenberger/houdini": ^0.11.2-modified
     "@sveltejs/kit": 1.0.0-next.107
     apollo-server: ^2.24.0
     concurrently: ^6.2.1
     graphql: 15.5.0
     graphql-relay: ^0.8.0
-    houdini: ^0.10.7
-    houdini-preprocess: ^0.10.7
+    houdini-preprocess: ^0.11.2
     subscriptions-transport-ws: ^0.9.18
     svelte: ^3.38.2
     svelte-preprocess: ^4.0.0
@@ -6754,7 +6789,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"houdini-common@^0.10.6, houdini-common@workspace:packages/houdini-common":
+"houdini-common@^0.11.1, houdini-common@workspace:packages/houdini-common":
   version: 0.0.0-use.local
   resolution: "houdini-common@workspace:packages/houdini-common"
   dependencies:
@@ -6799,13 +6834,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"houdini-preprocess@^0.10.7, houdini-preprocess@workspace:packages/houdini-preprocess":
+"houdini-preprocess@^0.11.2, houdini-preprocess@workspace:packages/houdini-preprocess":
   version: 0.0.0-use.local
   resolution: "houdini-preprocess@workspace:packages/houdini-preprocess"
   dependencies:
     "@babel/core": ^7.12.10
     "@babel/preset-env": ^7.12.11
     "@babel/preset-typescript": ^7.12.7
+    "@lukashechenberger/houdini": ^0.11.2-modified
     "@types/glob": ^7.1.3
     "@types/jest": ^26.0.20
     "@types/mkdirp": ^1.0.1
@@ -6813,8 +6849,7 @@ __metadata:
     babylon: ^7.0.0-beta.47
     estree-walker: ^2.0.2
     graphql: 15.5.0
-    houdini: ^0.10.7
-    houdini-common: ^0.10.6
+    houdini-common: ^0.11.1
     jest: ^26.6.3
     mkdirp: ^1.0.4
     prettier: "*"
@@ -6822,41 +6857,6 @@ __metadata:
     recast: ^0.20.4
     svelte: ^3.17.3
     typescript: ^4.0.0
-  languageName: unknown
-  linkType: soft
-
-"houdini@^0.10.7, houdini@workspace:packages/houdini":
-  version: 0.0.0-use.local
-  resolution: "houdini@workspace:packages/houdini"
-  dependencies:
-    "@babel/core": ^7.12.10
-    "@babel/preset-env": ^7.12.11
-    "@babel/preset-typescript": ^7.12.7
-    "@graphql-tools/merge": ^6.2.7
-    "@rollup/plugin-json": ^4.1.0
-    "@types/estree": ^0.0.47
-    "@types/glob": ^7.1.3
-    "@types/inquirer": ^7.3.1
-    "@types/jest": ^26.0.20
-    "@types/mkdirp": ^1.0.1
-    "@types/node-fetch": ^2.5.10
-    babel-jest: ^26.6.3
-    babylon: ^7.0.0-beta.47
-    commander: ^7.1.0
-    estree-walker: ^2.0.2
-    glob: ^7.1.6
-    graphql: ^15.5.0
-    houdini-common: ^0.10.6
-    inquirer: ^7.3.3
-    jest: ^26.6.3
-    mkdirp: ^1.0.4
-    node-fetch: ^2.6.1
-    recast: ^0.20.4
-    rollup-plugin-preserve-shebangs: ^0.2.0
-    svelte: ^3.34.0
-    typescript: ^4.0.0
-  bin:
-    houdini: build/cmd.js
   languageName: unknown
   linkType: soft
 

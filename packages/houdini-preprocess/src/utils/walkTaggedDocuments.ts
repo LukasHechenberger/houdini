@@ -11,7 +11,7 @@ import {
 	CompiledMutationKind,
 	CompiledQueryKind,
 	CompiledSubscriptionKind,
-} from 'houdini'
+} from '@lukashechenberger/houdini'
 import * as recast from 'recast'
 // locals
 import { TransformDocument } from '../types'

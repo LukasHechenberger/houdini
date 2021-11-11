@@ -31,6 +31,7 @@
 		"typescript": "^4.0.0"
 	},
 	"dependencies": {
+		"@lukashechenberger/houdini": "^0.11.2-modified",
 		"@types/mkdirp": "^1.0.1",
 		"babylon": "^7.0.0-beta.47",
 		"estree-walker": "^2.0.2",

@@ -1,7 +1,7 @@
 {
 	"name": "example-kit",
 	"private": true,
-	"version": "0.12.1",
+	"version": "0.12.1-modified",
 	"scripts": {
 		"dev": "concurrently \"yarn web\" \"yarn api\"",
 		"build": "svelte-kit build",
@@ -11,6 +11,7 @@
 		"api": "node api.cjs"
 	},
 	"devDependencies": {
+		"@lukashechenberger/houdini": "^0.11.2-modified",
 		"@sveltejs/kit": "1.0.0-next.107",
 		"concurrently": "^6.2.1",
 		"graphql": "15.5.0",

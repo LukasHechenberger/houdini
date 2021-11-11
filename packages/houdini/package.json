@@ -1,6 +1,9 @@
 {
-	"name": "houdini",
-	"version": "0.12.1",
+	"name": "@lukashechenberger/houdini",
+	"version": "0.12.1-modified.0",
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
 	"description": "The disappearing graphql client for SvelteKit",
 	"scripts": {
 		"build:runtime": "npm run build:runtime:cjs && npm run build:runtime:esm",
@@ -16,7 +19,7 @@
 	"main": "build/cmd/index.js",
 	"bin": "build/cmd.js",
 	"bugs": "https://github.com/AlecAivazis/houdini/issues",
-	"repository": "AlecAivazis/houdini",
+	"repository": "LukasHechenberger/houdini",
 	"keywords": [
 		"graphql",
 		"svelte",

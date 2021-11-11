@@ -10,7 +10,7 @@
 	"scripts": {
 		"tests": "node --experimental-vm-modules node_modules/.bin/jest",
 		"tests:watch": "node --experimental-vm-modules node_modules/.bin/jest  --watch",
-		"build": "yarn workspace houdini-common run build && yarn workspace houdini run build && yarn workspace houdini-preprocess run build ",
+		"build": "yarn workspace houdini-common run build && yarn workspace @lukashechenberger/houdini run build && yarn workspace houdini-preprocess run build ",
 		"clean": "rm -rf packages/*/build",
 		"format": "prettier \"packages/**/*.ts\"",
 		"format:write": "npm run format -- -w",
